@@ -112,7 +112,7 @@ public class Controller implements Initializable {
         updateGraph();
     }
 
-    private boolean updateValues() {
+    private boolean newValues() {
         int newMinX = (int) sliderX0.getValue();
         int newMaxX = (int) sliderXN.getValue();
         int newY0 = (int) sliderY0.getValue();
@@ -137,7 +137,7 @@ public class Controller implements Initializable {
 
     @FXML
     public void updateGraph() {
-        if (!updateValues())
+        if (!newValues())
             return;
 
         textX0.setText("X0: " + MinX);
