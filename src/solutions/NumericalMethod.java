@@ -12,11 +12,15 @@ public abstract class NumericalMethod implements IVPSolution {
     private String name;
 
     NumericalMethod(int MinX, int MaxX, int Y0, int N, String name) {
+        this.name = name;
+        update(MinX, MaxX, Y0, N);
+    }
+
+    public void update(int MinX, int MaxX, int Y0, int N) {
         this.MinX = MinX;
         this.MaxX = MaxX;
         this.Y0 = Y0;
         this.N = N;
-        this.name = name;
         H = (double) (MaxX - MinX) / (N - 1);
         fill();
     }
@@ -25,15 +29,8 @@ public abstract class NumericalMethod implements IVPSolution {
         y = new double[N];
         y[0] = Y0;
         for (int i = 1; i < N; i++) {
-//            System.out.print(getKey(i) + "|" + y[i] + " ");
-            try {
-                y[i] = getNextValue(getKey(i - 1), y[i - 1]);
-            } catch (Exception e) {
-                System.out.print("division by zero");
-                break;
-            }
+            y[i] = getNextValue(getKey(i - 1), y[i - 1]);
         }
-//        System.out.println();
     }
 
     abstract double getNextValue(double lastX, double lastY);
