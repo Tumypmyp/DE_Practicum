@@ -6,6 +6,7 @@ import javafx.scene.chart.LineChart;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Slider;
 import javafx.scene.text.Text;
+import solutions.*;
 
 import java.net.URL;
 import java.util.ResourceBundle;

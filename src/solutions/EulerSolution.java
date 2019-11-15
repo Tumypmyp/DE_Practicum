@@ -1,7 +1,7 @@
-package sample;
+package solutions;
 
 public class EulerSolution extends NumericalMethod {
-    EulerSolution(int MinX, int MaxX, int Y0, int N, String name) {
+    public EulerSolution(int MinX, int MaxX, int Y0, int N, String name) {
         super(MinX, MaxX, Y0, N, name);
     }
 

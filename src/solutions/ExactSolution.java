@@ -1,8 +1,6 @@
-package sample;
+package solutions;
 
 import javafx.scene.chart.XYChart;
-
-import java.awt.print.Printable;
 
 public class ExactSolution implements IVPSolution {
     private int MinX;
@@ -11,7 +9,7 @@ public class ExactSolution implements IVPSolution {
     private int N;
     private double H;
 
-    ExactSolution(int MinX, int MaxX, int Y0, int N) {
+    public ExactSolution(int MinX, int MaxX, int Y0, int N) {
         this.MinX = MinX;
         this.MaxX = MaxX;
         this.Y0 = Y0;
