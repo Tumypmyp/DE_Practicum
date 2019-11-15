@@ -3,78 +3,126 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.chart.LineChart?>
 <?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Slider?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox prefHeight="800.0" prefWidth="1000.0" spacing="10.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
-   <children>
-      <LineChart fx:id="mainLineChart" maxHeight="1.7976931348623157E308" title="Graph" VBox.vgrow="ALWAYS">
-        <xAxis>
-          <NumberAxis side="BOTTOM" />
-        </xAxis>
-        <yAxis>
-          <NumberAxis side="LEFT" />
-        </yAxis>
-         <VBox.margin>
-            <Insets />
-         </VBox.margin>
-      </LineChart>
-      <Text fx:id="textX0" strokeType="OUTSIDE" strokeWidth="0.0" text="X0:" textAlignment="CENTER">
-         <font>
-            <Font size="15.0" />
-         </font>
-         <VBox.margin>
-            <Insets left="20.0" />
-         </VBox.margin>
-      </Text>
-      <Slider fx:id="sliderX0" blockIncrement="1.0" min="1.0" onContextMenuRequested="#updateGraph" onKeyPressed="#updateGraph" onKeyReleased="#updateGraph" onKeyTyped="#updateGraph" onMouseClicked="#updateGraph" onMouseDragged="#updateGraph" onMouseEntered="#updateGraph" onMouseExited="#updateGraph" onMouseMoved="#updateGraph" onMousePressed="#updateGraph" onMouseReleased="#updateGraph" onTouchMoved="#updateGraph" onTouchPressed="#updateGraph" onTouchReleased="#updateGraph" onTouchStationary="#updateGraph" value="1.0">
-         <VBox.margin>
-            <Insets left="20.0" />
-         </VBox.margin>
-      </Slider>
-      <Text fx:id="textXN" strokeType="OUTSIDE" strokeWidth="0.0" text="XN:" textAlignment="CENTER">
-         <font>
-            <Font size="15.0" />
-         </font>
-         <VBox.margin>
-            <Insets left="20.0" />
-         </VBox.margin>
-      </Text>
-      <Slider fx:id="sliderXN" blockIncrement="1.0" min="1.0" onContextMenuRequested="#updateGraph" onKeyPressed="#updateGraph" onKeyReleased="#updateGraph" onKeyTyped="#updateGraph" onMouseClicked="#updateGraph" onMouseDragged="#updateGraph" onMouseEntered="#updateGraph" onMouseExited="#updateGraph" onMouseMoved="#updateGraph" onMousePressed="#updateGraph" onMouseReleased="#updateGraph" value="10.0">
-         <VBox.margin>
-            <Insets left="20.0" />
-         </VBox.margin>
-      </Slider>
-      <Text fx:id="textY0" strokeType="OUTSIDE" strokeWidth="0.0" text="Y0:" textAlignment="CENTER">
-         <font>
-            <Font size="15.0" />
-         </font>
-         <VBox.margin>
-            <Insets left="20.0" />
-         </VBox.margin>
-      </Text>
-      <Slider fx:id="sliderY0" blockIncrement="1.0" min="-100.0" onContextMenuRequested="#updateGraph" onKeyPressed="#updateGraph" onKeyReleased="#updateGraph" onKeyTyped="#updateGraph" onMouseClicked="#updateGraph" onMouseDragged="#updateGraph" onMouseEntered="#updateGraph" onMouseExited="#updateGraph" onMouseMoved="#updateGraph" onMousePressed="#updateGraph" onMouseReleased="#updateGraph" value="2.0">
-         <VBox.margin>
-            <Insets left="20.0" />
-         </VBox.margin>
-      </Slider>
-      <Text fx:id="textN" strokeType="OUTSIDE" strokeWidth="0.0" text="N:" textAlignment="CENTER">
-         <font>
-            <Font size="15.0" />
-         </font>
-         <VBox.margin>
-            <Insets left="20.0" />
-         </VBox.margin>
-      </Text>
-      <Slider fx:id="sliderN" blockIncrement="1.0" min="1.0" onContextMenuRequested="#updateGraph" onKeyPressed="#updateGraph" onKeyReleased="#updateGraph" onKeyTyped="#updateGraph" onMouseClicked="#updateGraph" onMouseDragged="#updateGraph" onMouseEntered="#updateGraph" onMouseExited="#updateGraph" onMouseMoved="#updateGraph" onMousePressed="#updateGraph" onMouseReleased="#updateGraph" value="10.0">
-         <VBox.margin>
-            <Insets left="20.0" />
-         </VBox.margin>
-      </Slider>
-   </children>
-   <padding>
-      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-   </padding>
-</VBox>
+<ScrollPane fitToHeight="true" fitToWidth="true" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <content>
+        <VBox spacing="10.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+            <children>
+                <LineChart fx:id="plots" maxHeight="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" title="Plots" VBox.vgrow="ALWAYS">
+                    <xAxis>
+                        <NumberAxis side="BOTTOM" />
+                    </xAxis>
+                    <yAxis>
+                        <NumberAxis side="LEFT" />
+                    </yAxis>
+                    <VBox.margin>
+                        <Insets />
+                    </VBox.margin>
+                </LineChart>
+                <Text fx:id="textX0" strokeType="OUTSIDE" strokeWidth="0.0" text="X0:" textAlignment="CENTER">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets left="20.0" />
+                    </VBox.margin>
+                </Text>
+                <Slider fx:id="sliderX0" blockIncrement="1.0" min="1.0" onContextMenuRequested="#updateGraph" onKeyPressed="#updateGraph" onKeyReleased="#updateGraph" onKeyTyped="#updateGraph" onMouseClicked="#updateGraph" onMouseDragged="#updateGraph" onMouseEntered="#updateGraph" onMouseExited="#updateGraph" onMouseMoved="#updateGraph" onMousePressed="#updateGraph" onMouseReleased="#updateGraph" onTouchMoved="#updateGraph" onTouchPressed="#updateGraph" onTouchReleased="#updateGraph" onTouchStationary="#updateGraph" value="1.0">
+                    <VBox.margin>
+                        <Insets left="20.0" />
+                    </VBox.margin>
+                </Slider>
+                <Text fx:id="textXN" strokeType="OUTSIDE" strokeWidth="0.0" text="XN:" textAlignment="CENTER">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets left="20.0" />
+                    </VBox.margin>
+                </Text>
+                <Slider fx:id="sliderXN" blockIncrement="1.0" min="1.0" onContextMenuRequested="#updateGraph" onKeyPressed="#updateGraph" onKeyReleased="#updateGraph" onKeyTyped="#updateGraph" onMouseClicked="#updateGraph" onMouseDragged="#updateGraph" onMouseEntered="#updateGraph" onMouseExited="#updateGraph" onMouseMoved="#updateGraph" onMousePressed="#updateGraph" onMouseReleased="#updateGraph" value="10.0">
+                    <VBox.margin>
+                        <Insets left="20.0" />
+                    </VBox.margin>
+                </Slider>
+                <Text fx:id="textY0" strokeType="OUTSIDE" strokeWidth="0.0" text="Y0:" textAlignment="CENTER">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets left="20.0" />
+                    </VBox.margin>
+                </Text>
+                <Slider fx:id="sliderY0" blockIncrement="1.0" min="-100.0" onContextMenuRequested="#updateGraph" onKeyPressed="#updateGraph" onKeyReleased="#updateGraph" onKeyTyped="#updateGraph" onMouseClicked="#updateGraph" onMouseDragged="#updateGraph" onMouseEntered="#updateGraph" onMouseExited="#updateGraph" onMouseMoved="#updateGraph" onMousePressed="#updateGraph" onMouseReleased="#updateGraph" value="2.0">
+                    <VBox.margin>
+                        <Insets left="20.0" />
+                    </VBox.margin>
+                </Slider>
+                <Text fx:id="textN" strokeType="OUTSIDE" strokeWidth="0.0" text="N:" textAlignment="CENTER">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets left="20.0" />
+                    </VBox.margin>
+                </Text>
+                <Slider fx:id="sliderN" blockIncrement="1.0" min="1.0" onContextMenuRequested="#updateGraph" onKeyPressed="#updateGraph" onKeyReleased="#updateGraph" onKeyTyped="#updateGraph" onMouseClicked="#updateGraph" onMouseDragged="#updateGraph" onMouseEntered="#updateGraph" onMouseExited="#updateGraph" onMouseMoved="#updateGraph" onMousePressed="#updateGraph" onMouseReleased="#updateGraph" value="10.0">
+                    <VBox.margin>
+                        <Insets left="20.0" />
+                    </VBox.margin>
+                </Slider>
+            <LineChart fx:id="localError" maxHeight="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" title="Local error">
+               <xAxis>
+                  <NumberAxis side="BOTTOM" />
+               </xAxis>
+               <yAxis>
+                  <NumberAxis side="LEFT" />
+               </yAxis>
+            </LineChart>
+            <Text fx:id="textX01" strokeType="OUTSIDE" strokeWidth="0.0" text="N1:" textAlignment="CENTER">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="20.0" />
+               </VBox.margin>
+            </Text>
+            <Slider fx:id="sliderX01" blockIncrement="1.0" min="1.0" onContextMenuRequested="#updateGraph" onKeyPressed="#updateGraph" onKeyReleased="#updateGraph" onKeyTyped="#updateGraph" onMouseClicked="#updateGraph" onMouseDragged="#updateGraph" onMouseEntered="#updateGraph" onMouseExited="#updateGraph" onMouseMoved="#updateGraph" onMousePressed="#updateGraph" onMouseReleased="#updateGraph" onTouchMoved="#updateGraph" onTouchPressed="#updateGraph" onTouchReleased="#updateGraph" onTouchStationary="#updateGraph" value="1.0">
+               <VBox.margin>
+                  <Insets left="20.0" />
+               </VBox.margin>
+            </Slider>
+            <Text fx:id="textX011" strokeType="OUTSIDE" strokeWidth="0.0" text="N2:" textAlignment="CENTER">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="20.0" />
+               </VBox.margin>
+            </Text>
+            <Slider fx:id="sliderX011" blockIncrement="1.0" min="1.0" onContextMenuRequested="#updateGraph" onKeyPressed="#updateGraph" onKeyReleased="#updateGraph" onKeyTyped="#updateGraph" onMouseClicked="#updateGraph" onMouseDragged="#updateGraph" onMouseEntered="#updateGraph" onMouseExited="#updateGraph" onMouseMoved="#updateGraph" onMousePressed="#updateGraph" onMouseReleased="#updateGraph" onTouchMoved="#updateGraph" onTouchPressed="#updateGraph" onTouchReleased="#updateGraph" onTouchStationary="#updateGraph" value="1.0">
+               <VBox.margin>
+                  <Insets left="20.0" />
+               </VBox.margin>
+            </Slider>
+            <LineChart fx:id="totalError" maxHeight="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" title="Total error">
+               <xAxis>
+                  <NumberAxis side="BOTTOM" />
+               </xAxis>
+               <yAxis>
+                  <NumberAxis side="LEFT" />
+               </yAxis>
+            </LineChart>
+            </children>
+            <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </padding>
+        </VBox>
+
+    </content>
+</ScrollPane>
