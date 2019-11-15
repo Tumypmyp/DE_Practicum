@@ -56,7 +56,6 @@ public abstract class NumericalMethod implements IVPSolution {
         series.getData().clear();
         for (int i = 0; i < N; ++i) {
             series.getData().add(new XYChart.Data(getKey(i), getValue(i)));
-//            System.out.print(getKey(i) + "|" + getValue(i) + " ");
         }
     }
 
@@ -67,7 +66,7 @@ public abstract class NumericalMethod implements IVPSolution {
         System.out.println();
     }
 
-    public double getH() {
+    double getH() {
         return H;
     }
 }

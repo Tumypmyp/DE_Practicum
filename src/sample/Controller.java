@@ -35,7 +35,7 @@ public class Controller implements Initializable {
 
     private ExactSolution exactSol = new ExactSolution(MinX, MaxX, Y0, N);
     private NumericalMethod eulerSol = new EulerSolution(MinX, MaxX, Y0, N, "Euler");
-    private NumericalMethod improvedEulerSol = new ImprovedEulerSolution(MinX, MaxX, Y0, N, "improvedEuler");
+    private NumericalMethod improvedEulerSol = new ImprovedEulerSolution(MinX, MaxX, Y0, N, "improved Euler");
     private NumericalMethod rungeKuttaSol = new RungeKuttaSolution(MinX, MaxX, Y0, N, "Runge-Kutta");
 
     @FXML

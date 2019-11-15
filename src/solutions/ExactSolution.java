@@ -22,10 +22,12 @@ public class ExactSolution implements IVPSolution {
     }
 
 
+    @Override
     public double getKey(int i) {
         return MinX + i * H;
     }
 
+    @Override
     public double getValue(int i) {
         double x = getKey(i);
         return solve(x);
@@ -38,6 +40,7 @@ public class ExactSolution implements IVPSolution {
         return c1 * x * x - x;
     }
 
+    @Override
     public void updateXYChart(XYChart.Series series) {
         series.getData().clear();
         for (int i = 0; i < N; ++i) {
@@ -57,16 +60,12 @@ public class ExactSolution implements IVPSolution {
         for (int n = N1; n <= N2; ++n) {
             double maxError = 0;
             numericalMethod.update(MinX, MaxX, Y0, n);
-//            numericalMethod.print();
             for (int i = 0; i < n; ++i) {
                 maxError = Math.max(maxError, Math.abs(solve(numericalMethod.getKey(i)) - numericalMethod.getValue(i)));
             }
-//            System.out.print(n + "|" + maxError + " ");
             series.getData().add(new XYChart.Data(n, maxError));
         }
-//        System.out.println();
     }
-
 
     public void print() {
         System.out.println("Exact");
